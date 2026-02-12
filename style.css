@@ -305,5 +305,232 @@ h1 { font-size: 2.5rem; margin: 20px 0; }
     .tooltip-whatsapp {
         display: none; /* Esconde o texto no celular para não atrapalhar */
     }
-}  
+}  /* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    --cyan: #00f2ff;
+    --navy: #011628;
+    --dark: #050505;
+    --white: #ffffff;
+    --gray: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--navy);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- LOADER --- */
+#loader {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo-load {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    margin-bottom: 20px;
+}
+
+.logo-load span { color: var(--cyan); }
+
+.progress-bar {
+    width: 250px;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--cyan);
+    animation: load 2s forwards;
+}
+
+@keyframes load { to { width: 100%; } }
+
+/* --- HEADER & NAV --- */
+header {
+    padding: 20px 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--cyan); }
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.btn-nav {
+    background: var(--cyan);
+    color: #000 !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+/* --- HERO --- */
+.hero {
+    padding: 100px 0;
+    background: radial-gradient(circle at center, #021a33 0%, #000 100%);
+    text-align: center;
+}
+
+.tag {
+    color: var(--cyan);
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    margin: 20px 0;
+    line-height: 1.1;
+}
+
+.hero-actions {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-main {
+    background: var(--cyan);
+    color: #000;
+    text-decoration: none;
+    padding: 18px 35px;
+    font-weight: 900;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.btn-alt {
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    padding: 18px 35px;
+    font-weight: 900;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* --- SECTIONS --- */
+.section-padding { padding: 80px 0; }
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* --- COMENTÁRIOS --- */
+.comment {
+    background: rgba(255,255,255,0.03);
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 4px solid var(--cyan);
+    transition: 0.3s;
+}
+
+.comment:hover {
+    background: rgba(0, 242, 255, 0.05);
+    transform: translateY(-5px);
+}
+
+.comment p { margin-bottom: 15px; font-style: italic; }
+.comment span { font-weight: 900; color: var(--cyan); font-size: 0.8rem; }
+
+/* --- WHATSAPP FLOAT --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.whatsapp-float img { width: 35px; }
+
+.tooltip-whatsapp {
+    position: absolute;
+    right: 75px;
+    background: #fff;
+    color: #000;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover .tooltip-whatsapp { opacity: 1; }
+
+/* --- FOOTER --- */
+.modern-footer { background: #000; }
+.footer-copy { color: #555; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Esconde menu no mobile para simplificar */
+    .hero h1 { font-size: 2.5rem; }
+}
+
 
